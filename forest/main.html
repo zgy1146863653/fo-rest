@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>森林防灾预警系统</title>
+	<link rel="stylesheet" href="System/bootstrap.min.css">
+	<script src="System/jquery.min.js"></script>
+	<script src="System/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="style/main_style.css">
+    <script src="js/map.js"></script>
+    <script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.10&key=f8c77d0a66b1c30f891dce03233c06a9&callback=init"></script>
+</head>
+<body>
+	<h1 class="text-center">板障山森林各项数据汇总</h1>
+	<div class="row">
+		<div class=" col-xs-12 col-md-6">
+			<div id="item1" class="center-block">
+			</div>
+		</div>
+		<div class=" col-xs-12 col-md-6">
+			<div id="item2" class="center-block">
+			</div>
+		</div>
+	</div><!-- 本周温湿度的变化，温度比例 -->
+
+	<div class="container ">
+		<div class="row ">
+			<div id="item3" class="center-block"></div>
+		</div>
+	</div><!-- 蒸发量和降水量变化-->
+    <h3>无人机飞行轨迹</h3>
+    <div id="container"></div><!--轨迹展示-->
+
+	<div class="container text-center">
+		<h3>城市当天天气查询</h3>
+		<form>
+			<input type="text" id="city">
+			<input type="button" value="查询" id="btn">
+		</form>
+		<div id="answer" class="center-block"></div><!--存放结果的地方-->
+	</div><!--天气查询功能-->
+
+	<div class="container">
+		<h3>森林火险天气等级表</h3>
+		<table class="table table-hover table-responsive">
+			<thead>
+			<tr>
+				<th>级别</th>
+				<th>名称</th>
+				<th>危险程度</th>
+				<th>易燃程度</th>
+				<th>蔓延扩散程度</th>
+				<th>表征颜色</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<td>一级</td>
+				<td>低火险</td>
+				<td>低</td>
+				<td>难</td>
+				<td>难</td>
+				<td>绿</td>
+			</tr>
+			<tr>
+				<td>二级</td>
+				<td>较低火险</td>
+				<td>较低</td>
+				<td>较难</td>
+				<td>较难</td>
+				<td>蓝</td>
+			</tr>
+			<tr>
+				<td>三级</td>
+				<td>较高火险</td>
+				<td>较高</td>
+				<td>较易</td>
+				<td>较易</td>
+				<td>黄色</td>
+			</tr>
+			<tr>
+				<td>四级</td>
+				<td>高火险</td>
+				<td>高</td>
+				<td>易</td>
+				<td>易</td>
+				<td>橙色</td>
+			</tr>
+			<tr>
+				<td>五级</td>
+				<td>极高火险</td>
+				<td>极高</td>
+				<td>极易</td>
+				<td>极易</td>
+				<td>红色</td>
+			</tr>
+			</tbody>
+		</table>
+	</div><!-- 森林火险等级表 -->
+    <div class="container">
+        <button id="butt" class="btn center-block btn-primary">获取火灾等级</button>
+    </div><!-- 获取结果 -->
+	<footer class="container">
+		<div class="text-center">
+			<p>Copyright © 2012—2020 by 马婷钰</p>
+			<a href="#">关于我们</a>
+			<a href="#">联系我们</a>
+		</div>
+	</footer>
+
+
+	<script src="System/echarts.min.js"></script>
+	<script src="js/bar.js"></script>
+	<script src="js/pie.js"></script>
+	<script src="js/bar_pie.js"></script>
+	<script>
+		var btn=document.getElementById('butt');
+		btn.onclick=function(){
+			alert("当前火灾等级为:一级");
+		}
+	</script>
+</body>
+</html>
